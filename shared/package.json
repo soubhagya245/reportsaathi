@@ -1,0 +1,13 @@
+{
+  "name": "@reportsaathi/shared",
+  "version": "1.0.0",
+  "description": "Shared TypeScript definitions and contracts for ReportSaathi",
+  "main": "types/index.ts",
+  "types": "types/index.ts",
+  "scripts": {
+    "typecheck": "tsc --noEmit"
+  },
+  "devDependencies": {
+    "typescript": "^5.4.0"
+  }
+}

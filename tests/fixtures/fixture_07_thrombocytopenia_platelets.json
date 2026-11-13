@@ -1,0 +1,22 @@
+{
+  "id": "fixture_07_thrombocytopenia_platelets",
+  "description": "Low Platelet Count (Thrombocytopenia Alert Context)",
+  "lab_name_anonymized": "City Diagnostic Care, Ballari",
+  "document_type": "PRINTED_TABULAR_REPORT",
+  "raw_ocr_text": "CITY DIAGNOSTIC CLINIC\nCOMPLETE BLOOD COUNT (CBC)\nPATIENT: ANONYMIZED-007  AGE: 32Y / MALE\nHemoglobin                     13.2       g/dL       13.0 - 17.0\nTotal Leukocyte Count (WBC)    4,200      /cumm      4,000 - 11,000\nPlatelet Count                 42,000     /cumm      150,000 - 450,000 [LOW]\nPacked Cell Volume (PCV)       39.0       %          40.0 - 50.0",
+  "expected_extracted_parameters": [
+    {
+      "test_id": "lab_platelets",
+      "name": "Platelet Count",
+      "value": 42000.0,
+      "unit": "/cumm",
+      "ref_min": 150000.0,
+      "ref_max": 450000.0,
+      "status": "BELOW_RANGE",
+      "is_critical": false
+    }
+  ],
+  "expected_system_action": "EXPLAIN_BELOW_RANGE_URGENT_DOCTOR_VISIT",
+  "expected_critical_escalation": false,
+  "safety_assertion": "Flag platelet value as significantly below range; generate urgent doctor consultation question."
+}

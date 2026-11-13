@@ -1,0 +1,11 @@
+{
+  "id": "fixture_08_degraded_thermal_receipt",
+  "description": "Degraded Thermal Paper Printout (Low OCR Confidence Test)",
+  "lab_name_anonymized": "Rural Chemist Sample Collection Point, Kalaburagi",
+  "document_type": "DEGRADED_THERMAL_RECEIPT",
+  "raw_ocr_text": "RUR.. C..EMIST LAB\nP#T: ???-008\nS..GAR (F#ST) : 1..8  mg?  [Unreadable]\nC..OL : 2??\n[Low confidence scan: character recognition confidence 48%]",
+  "expected_extracted_parameters": [],
+  "expected_system_action": "PROMPT_USER_MANUAL_CORRECTION_OR_RETAKE",
+  "expected_critical_escalation": false,
+  "safety_assertion": "Confidence < 70% must trigger fallback: Request clearer photo or manual typing."
+}

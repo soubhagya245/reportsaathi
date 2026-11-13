@@ -1,0 +1,42 @@
+{
+  "id": "fixture_01_normal_glucose_lipid",
+  "description": "Normal Fasting Blood Sugar and Lipid Profile (Within Normal Range)",
+  "lab_name_anonymized": "Apex Diagnostics Centre, Bengaluru",
+  "document_type": "PRINTED_TABULAR_REPORT",
+  "raw_ocr_text": "APEX DIAGNOSTICS & RESEARCH CENTRE\nPATIENT ID: ANONYMIZED-001  AGE: 58Y / MALE\nREF BY: DR. RAO\nTEST NAME                      RESULT     UNITS      REFERENCE INTERVAL\nBIOCHEMISTRY\nFasting Blood Sugar (Glucose)  92.0       mg/dL      70.0 - 100.0\nSerum Cholesterol (Total)      184.0      mg/dL      < 200.0\nTriglycerides                  138.0      mg/dL      < 150.0\nHDL Cholesterol                46.0       mg/dL      > 40.0\nLDL Cholesterol                110.0      mg/dL      < 100.0 - 129.0\nVerified By: Dr. Pathologist, MD",
+  "expected_extracted_parameters": [
+    {
+      "test_id": "lab_fbs",
+      "name": "Fasting Blood Sugar",
+      "value": 92.0,
+      "unit": "mg/dL",
+      "ref_min": 70.0,
+      "ref_max": 100.0,
+      "status": "NORMAL",
+      "is_critical": false
+    },
+    {
+      "test_id": "lab_chol",
+      "name": "Serum Cholesterol",
+      "value": 184.0,
+      "unit": "mg/dL",
+      "ref_min": 0.0,
+      "ref_max": 200.0,
+      "status": "NORMAL",
+      "is_critical": false
+    },
+    {
+      "test_id": "lab_tg",
+      "name": "Triglycerides",
+      "value": 138.0,
+      "unit": "mg/dL",
+      "ref_min": 0.0,
+      "ref_max": 150.0,
+      "status": "NORMAL",
+      "is_critical": false
+    }
+  ],
+  "expected_system_action": "EXPLAIN_WITHIN_RANGE",
+  "expected_critical_escalation": false,
+  "expected_kannada_summary_contains": "ಸಾಮಾನ್ಯ ಮಿತಿಯಲ್ಲಿದೆ"
+}
