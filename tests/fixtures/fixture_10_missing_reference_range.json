@@ -1,0 +1,22 @@
+{
+  "id": "fixture_10_missing_reference_range",
+  "description": "Report with Missing / Torn Reference Range Column",
+  "lab_name_anonymized": "Standard Diagnostic Laboratory, Vijayapura",
+  "document_type": "PRINTED_TABULAR_REPORT_INCOMPLETE_BOUNDS",
+  "raw_ocr_text": "STANDARD DIAGNOSTIC LABORATORY\nPATIENT: ANONYMIZED-010  AGE: 50Y / MALE\nTEST                          VALUE      UNIT\nSerum Uric Acid               7.8        mg/dL\nSerum Bilirubin Total         1.1        mg/dL\n[Reference column torn or unprinted on paper]",
+  "expected_extracted_parameters": [
+    {
+      "test_id": "lab_uric_acid",
+      "name": "Serum Uric Acid",
+      "value": 7.8,
+      "unit": "mg/dL",
+      "ref_min": null,
+      "ref_max": null,
+      "status": "RANGE_NOT_SPECIFIED_ON_REPORT",
+      "is_critical": false
+    }
+  ],
+  "expected_system_action": "USE_SYSTEM_FALLBACK_BOUNDS_WITH_DISCLAIMER",
+  "expected_critical_escalation": false,
+  "safety_assertion": "Inform user that lab range was not found on paper; ask them to consult their doctor for interpretation."
+}

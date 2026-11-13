@@ -1,0 +1,39 @@
+services:
+  backend:
+    build:
+      context: .
+      dockerfile: backend/Dockerfile
+    restart: unless-stopped
+    environment:
+      - APP_ENV=staging
+      - PORT=8000
+      - DB_PATH=/app/data/reportsaathi.db
+      - SCRATCH_DIR=/tmp/scratch
+      - DATA_SALT=${DATA_SALT:-staging_deterministic_salt_change_me}
+      - WHATSAPP_VERIFY_TOKEN=${WHATSAPP_VERIFY_TOKEN:-staging_verify_token}
+    volumes:
+      - staging_db_data:/app/data
+      - staging_scratch_data:/tmp/scratch
+    ports:
+      - "8000:8000"
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:8000/api/health"]
+      interval: 10s
+      timeout: 5s
+      retries: 3
+      start_period: 5s
+
+  frontend:
+    build:
+      context: ./frontend
+      dockerfile: Dockerfile
+    restart: unless-stopped
+    depends_on:
+      backend:
+        condition: service_healthy
+    ports:
+      - "80:80"
+
+volumes:
+  staging_db_data:
+  staging_scratch_data:

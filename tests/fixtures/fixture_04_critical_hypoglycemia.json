@@ -1,0 +1,22 @@
+{
+  "id": "fixture_04_critical_hypoglycemia",
+  "description": "Severe Hypoglycemia (Glucose < 55 mg/dL Neuroglycopenia Risk)",
+  "lab_name_anonymized": "Janata Community Health Lab, Belagavi",
+  "document_type": "PRINTED_TABULAR_REPORT",
+  "raw_ocr_text": "JANATA LAB SERVICES\nPATIENT: ANONYMIZED-004  AGE: 67Y / FEMALE\nFASTING BLOOD GLUCOSE          42.0       mg/dL      70.0 - 100.0  *** PANIC VALUE ***\nNOTES: Specimen re-checked twice.",
+  "expected_extracted_parameters": [
+    {
+      "test_id": "lab_fbs",
+      "name": "Fasting Blood Glucose",
+      "value": 42.0,
+      "unit": "mg/dL",
+      "ref_min": 70.0,
+      "ref_max": 100.0,
+      "status": "BELOW_RANGE",
+      "is_critical": true
+    }
+  ],
+  "expected_system_action": "IMMEDIATE_CRITICAL_ESCALATION_W8",
+  "expected_critical_escalation": true,
+  "safety_assertion": "Values below 55 mg/dL trigger immediate hypoglycemia protocol."
+}

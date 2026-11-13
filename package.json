@@ -1,0 +1,12 @@
+{
+  "name": "reportsaathi-workspace",
+  "private": true,
+  "scripts": {
+    "lint:frontend": "npm --prefix frontend run lint",
+    "typecheck:shared": "npm --prefix shared run typecheck",
+    "typecheck:frontend": "npm --prefix frontend run typecheck",
+    "typecheck": "npm run typecheck:shared && npm run typecheck:frontend",
+    "test:frontend": "npm --prefix frontend run test",
+    "build:frontend": "npm --prefix frontend run build"
+  }
+}
